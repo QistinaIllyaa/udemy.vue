@@ -1,26 +1,16 @@
 
-
-
-
-
-
-
-
-
-
-
 Vue.createApp({
     // data: function()
-    data(){
-        return{
+    data() {
+        return {
             goals: [],
-            enteredValue:''
+            enteredValue: ''
         };
     },
     methods: {
-        addGoal(){
+        addGoal() {
             this.goals.push(this.enteredValue); //to display the value
-            this.enteredValue =''; //to reset the input box
+            this.enteredValue = ''; //to reset the input box
         }
     }
 }).mount('#app'); //to assign to which part should the data will work on
