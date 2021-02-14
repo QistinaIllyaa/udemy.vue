@@ -14,15 +14,18 @@ const app = Vue.createApp({
     remove(num){
       this.counter = this.counter - num;;
     },
-    setName(event, lastName){
+    setName(event){
       //auto update the input
-      this.name = event.target.value + ' ' + lastName;
+      this.name = event.target.value;
     },
     submitForm(){
       alert('Submitted');
     },
     confirmed(){
       this.confirmedName = this.name;
+    },
+    resetInput(){
+      this.name='';
     }
     // submitForm(event){
     //   // prevent from reload
