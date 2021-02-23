@@ -18,8 +18,8 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="add(5)">Add 5</button>
-      <button v-on:click="remove(5)">Remove 5</button>
+      <button @click="add(5)">Add 5</button>
+      <button @click="remove(5)">Remove 5</button>
       <!-- to lock initial value -->
       <p v-once>Starting Counter : {{ counter }}</p>
       <p>Result: {{ counter }}</p>
@@ -28,10 +28,10 @@
       <!-- two way bind of v-on:value and v-on:input -->
       <input type="text" v-model="name">
       <input type="text" v-model="lastname"> 
-      <button v-on:click="resetInput">Reset</button>
+      <button @click="resetInput">Reset</button>
       <p>Your Name: {{ fullname }}</p>
 
-      <form v-on:submit.prevent="submitForm">
+      <form @submit.prevent="submitForm">
         <input type="text">
         <button>Sign Up</button>
       </form>
