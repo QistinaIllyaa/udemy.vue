@@ -26,9 +26,10 @@
       <!-- <input type="text" v-on:input="setName($event, 'Illya')" v-on:keyup.enter="confirmed">
       <p>Your Name: {{ confirmedName }}</p> -->
       <!-- two way bind of v-on:value and v-on:input -->
-      <input type="text" v-model="name"> 
+      <input type="text" v-model="name">
+      <input type="text" v-model="lastname"> 
       <button v-on:click="resetInput">Reset</button>
-      <p>Your Name: {{ outputFullname() }}</p>
+      <p>Your Name: {{ fullname }}</p>
 
       <form v-on:submit.prevent="submitForm">
         <input type="text">
