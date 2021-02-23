@@ -28,7 +28,7 @@
       <!-- two way bind of v-on:value and v-on:input -->
       <input type="text" v-model="name"> 
       <button v-on:click="resetInput">Reset</button>
-      <p>Your Name: {{ name }}</p>
+      <p>Your Name: {{ outputFullname() }}</p>
 
       <form v-on:submit.prevent="submitForm">
         <input type="text">
