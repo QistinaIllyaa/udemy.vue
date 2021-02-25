@@ -19,7 +19,7 @@
     <section id="styling">
       <!-- <div :class="boxASelected ? 'demo active' : 'demo'" @click="boxSelected('A')"></div> -->
       <div class="demo" :class="boxAClasses" @click="boxSelected('A')"></div>
-      <div :class="{demo : true, color: boxBSelected}" @click="boxSelected('B')"></div>
+      <div :class="['demo',{ color: boxBSelected }]" @click="boxSelected('B')"></div>
       <div :class="{demo : true, active: boxCSelected}" @click="boxSelected('C')"></div>
     </section>
   </body>
