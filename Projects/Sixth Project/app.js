@@ -9,6 +9,7 @@ const app = Vue.createApp({
       monsterHealth: 100,
       currentRound: 0,
       winner: null,
+      logMessages: [],
     };
   },
   watch: {
@@ -53,16 +54,19 @@ const app = Vue.createApp({
       this.currentRound++;
       const attackValue = getRandowmValue(5, 12); //using outsource function
       this.monsterHealth = this.monsterHealth - attackValue;
+      this.addLogMessage('player', 'attack', attackValue);
       this.attackPlayer();
     },
     attackPlayer() {
       const attackValue = getRandowmValue(8, 15);
       this.playerHealth -= attackValue;
+      this.addLogMessage('monster', 'attack', attackValue);
     },
     specialAttackMonster() {
       this.currentRound++;
       const attackValue = getRandowmValue(10, 25);
       this.monsterHealth -= attackValue;
+      this.addLogMessage('player', 'attack', attackValue);
       this.attackPlayer();
     },
     healPlayer() {
@@ -73,7 +77,7 @@ const app = Vue.createApp({
       } else {
         this.playerHealth += healValue;
       }
-
+      this.addLogMessage('player', 'heal', healValue);
       this.attackPlayer();
     },
     newGame() {
@@ -82,9 +86,21 @@ const app = Vue.createApp({
       this.monsterHealth = 100;
       this.winner = null;
       this.currentRound = 0;
+      this.logMessages = [];
     },
     surrender() {
       this.winner = "monster";
+    },
+    addLogMessage(who, what, value) {
+      //who did something
+      // unshift if basically like push but push add something at the END of the array,
+      //but unshift add something at the BEGINING of the array
+      this.logMessages.unshift({
+        //adding object
+        actionBy: who,
+        actionType: what,
+        actionValue: value,
+      });
     },
   },
 });
