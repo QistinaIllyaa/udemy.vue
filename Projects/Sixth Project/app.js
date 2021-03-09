@@ -50,14 +50,14 @@ const app = Vue.createApp({
     },
   },
   methods: {
-    attackMonster() {
+    attackMonster() { //for player usage
       this.currentRound++;
       const attackValue = getRandowmValue(5, 12); //using outsource function
       this.monsterHealth = this.monsterHealth - attackValue;
       this.addLogMessage('player', 'attack', attackValue);
-      this.attackPlayer();
+      this.attackPlayer(); //whenever player attack, the monster will auto attack.
     },
-    attackPlayer() {
+    attackPlayer() { //monster usage
       const attackValue = getRandowmValue(8, 15);
       this.playerHealth -= attackValue;
       this.addLogMessage('monster', 'attack', attackValue);
