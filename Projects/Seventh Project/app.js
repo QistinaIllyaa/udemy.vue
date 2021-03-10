@@ -17,6 +17,14 @@ const app = Vue.createApp({
 
 app.mount('#app');
 
+const app2 = Vue.createApp({
+    data(){
+        return{
+            bestMeal: 'Masakan Ibu!'
+        }
+    }
+});
+app2.mount('#app2');
 //... vanila js
 
 let message ='Hello';
@@ -37,7 +45,7 @@ const data ={
 const handler = {
     set(target, key, value){
         console.log(target); //message value 
-        console.log(key); // the data
+        console.log(key); // the element
         console.log(value); // value of new message
 
         if(key == 'message'){
