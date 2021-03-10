@@ -7,7 +7,8 @@ const app = Vue.createApp({
     },
     methods:{
         setText(){
-            this.message = this.currentUserInput;
+            // this.message = this.currentUserInput;
+            this.message = this.$refs.userText.value; //the other way round in displaying user input by using refs
         },
         saveInput(event){ //for input box to be function
             this.currentUserInput = event.target.value;

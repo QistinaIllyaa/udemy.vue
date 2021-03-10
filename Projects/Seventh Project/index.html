@@ -18,11 +18,14 @@
     </header>
     <section id="app">
       <h2>How Vue Works</h2>
-      <input type="text" @input="saveInput">
+      <input type="text" ref="userText"> 
+      <!-- <input type="text" @input="saveInput">  -->
+      <!-- or we can do <input type="text" v-model = "currentUserInput">  -->
       <button @click="setText">Set Text</button>
       <p>{{ message }}</p>
     </section>
     <section id="app2">
+        <!-- DOES NOT WORK: <p>{{ message }}</p> -->
         <p>{{ bestMeal }}</p>
     </section>
   </body>
